@@ -436,11 +436,11 @@ def process_row(row, mgf_csv_path, output_folder):
                 rel_intensity = round(intensity / max_intensity, 4)
                 coverage_results[f'B_y0_{mod}_RelInt_{config["name"]}'] = rel_intensity
 
-            # Save labeled spectrum to CSV
-            output_csv = output_folder / f"{csv_file.stem}_labeled.csv"
-            df.to_csv(output_csv, index=False)
-            
-            return coverage_results
+        # Save labeled spectrum to CSV
+        output_csv = output_folder / f"{csv_file.stem}_labeled.csv"
+        df.to_csv(output_csv, index=False)
+        
+        return coverage_results
     except:
         print("Error:",
               f"{row['ScanTitle']}")
